@@ -23,18 +23,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soulmachine/erc20-token-list.git"
+    "url": "git+https://github.com/akroma-project/akroma-erc20-token-list.git"
   },
   "keywords": [
     "cryptocurrency",
     "blockchain"
   ],
-  "author": "soulmachine",
+  "author": "akroma-project",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/soulmachine/erc20-token-list/issues"
+    "url": "https://github.com/akroma-project/akroma-erc20-token-list/issues"
   },
-  "homepage": "https://github.com/soulmachine/erc20-token-list",
+  "homepage": "https://github.com/akroma-project/akroma-erc20-token-list",
   "dependencies": {
     "yargs": "^17.0.1"
   },
