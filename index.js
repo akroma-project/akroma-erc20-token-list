@@ -34,7 +34,7 @@
  */
 
 /** @type {Array<TokenInfo>} */
-import { find } from './tokens.json';
+const data = require('./tokens.json');
 
 /**
  * Get the token info.
@@ -43,14 +43,14 @@ import { find } from './tokens.json';
  * @returns {TokenInfo | undefined} The TokenInfo, undefined if not exists
  */
 function getTokenInfo(symbol) {
-  return find(x => x.name == symbol);
+  return data.find(x => x.name == symbol);
 }
 
 /**
  * @param {string} contactAdress
  */
 function getTokenInfoByContractAddress(contactAdress) {
-  return find(x => x.address === contactAdress);
+  return data.find(x => x.address === contactAdress);
 }
 
-export default { getTokenInfo };
+module.exports = { getTokenInfo };
