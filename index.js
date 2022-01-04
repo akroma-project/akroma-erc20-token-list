@@ -42,8 +42,8 @@ const data = require('./tokens.json');
  * @param symbol {string} The token symbol, e.g., USDT, BNB, LINK, etc.
  * @returns {TokenInfo | undefined} The TokenInfo, undefined if not exists
  */
-function getTokenInfo(symbol) {
-  return data.find(x => x.name == symbol);
+function getTokenInfoBySymbol(symbol) {
+  return data.find(x => x.symbol == symbol);
 }
 
 /**
@@ -53,4 +53,18 @@ function getTokenInfoByContractAddress(contactAdress) {
   return data.find(x => x.address === contactAdress);
 }
 
-module.exports = { getTokenInfo };
+/**
+ * @param {string} name
+ */
+function getTokenInfoByName(name) {
+  return data.find(x => x.name === name);
+}
+
+/**
+ * @param {string} ens_address
+ */
+function getTokenInfoByENS(ens_address) {
+  return data.find(x => x.ens_address === ens_address);
+}
+
+module.exports = { getTokenInfoBySymbol, getTokenInfoByContractAddress, getTokenInfoByName, getTokenInfoByENS };
