@@ -79,3 +79,9 @@ export interface Support {
 ```bash
 npx @akroma-project/akroma-erc20-token-list Dumb
 ```
+
+## Pushing to NPM
+
+```bash
+npm publish --access public
+```
