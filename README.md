@@ -1,16 +1,20 @@
-# erc20-token-list
+# @akroma-project/akroma-erc20-token-list
 
-List of all ERC20 tokens. This library is forked from [ethereum-lists/src/tokens/eth/](https://github.com/MyEtherWallet/ethereum-lists/tree/master/src/tokens/eth)
+List of all ERC20 tokens on the Akroma Network (akroma.org). This library is forked from [ethereum-lists/src/tokens/eth/](https://github.com/MyEtherWallet/ethereum-lists/tree/master/src/tokens/eth)
 
 ## How to use
 
 ```javascript
-/* eslint-disable import/no-unresolved,no-console */
-const { getTokenInfo } = require('erc20-token-list');
+const { getTokenInfo } = require('@akroma-project/akroma-erc20-token-list');
 
-console.info(getTokenInfo('USDT'));
+console.info(getTokenInfo('Dumb'));
 ```
 
+```javascript
+import { getTokenInfo } from '@akroma-project/akroma-erc20-token-list';
+
+console.info(getTokenInfo('Dumb'));
+```
 ## API Manual
 
 There is only one API in this library:
@@ -29,16 +33,49 @@ Which returns an `TokenInfo`:
 
 ```typescript
 export interface TokenInfo {
-  symbol: string;
-  name: string;
-  type: string;
   address: string;
   decimals: number;
+  ens_address: string;
+  logo: Logo;
+  name: string;
+  social: Social;
+  support: Support;
+  symbol: string;
+  type: string;
+  website: string;
+}
+
+export interface Logo {
+  height: string;
+  ipfs_hash: string;
+  src: string;
+  width: string;
+}
+
+export interface Social {
+  blog: string;
+  chat: string;
+  facebook: string;
+  forum: string;
+  github: string;
+  gitter: string;
+  instagram: string;
+  linkedin: string;
+  reddit: string;
+  slack: string;
+  telegram: string;
+  twitter: string;
+  youtube: string;
+}
+
+export interface Support {
+  email: string;
+  url: string;
 }
 ```
 
 ## Quick Start
 
 ```bash
-npx erc20-token-list USDT
+npx @akroma-project/akroma-erc20-token-list Dumb
 ```

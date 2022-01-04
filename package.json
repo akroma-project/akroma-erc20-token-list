@@ -1,5 +1,5 @@
 {
-  "name": "erc20-token-list",
+  "name": "@akroma-project/akroma-erc20-token-list",
   "version": "0.0.3",
   "description": "List of all ERC20 tokens.",
   "main": "index.js",
