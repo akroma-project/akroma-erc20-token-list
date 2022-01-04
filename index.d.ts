@@ -45,4 +45,10 @@ export interface Support {
  * @param symbol The token symbol, e.g., USDT, BNB, LINK, etc.
  * @returns The TokenInfo, undefined if not exists
  */
-export declare function getTokenInfo(symbol: string): TokenInfo | undefined;
+export declare function getTokenInfoBySymbol(symbol: string): TokenInfo | undefined;
+
+export declare function getTokenInfoByContractAddress(contactAdress: string): TokenInfo | undefined;
+
+export declare function getTokenInfoByName(name: string): TokenInfo | undefined;
+
+export declare function getTokenInfoByENS(ens_address: string): TokenInfo | undefined;
