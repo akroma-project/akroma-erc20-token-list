@@ -2,15 +2,39 @@
  * Token Information.
  *
  * @typedef {Object} TokenInfo
- * @property {string} symbol
- * @property {string} name
- * @property {string} type
  * @property {string} address
  * @property {number} decimals
+ * @property {string} ens_address
+ * @property {object} logo
+ * @property {string} logo.height
+ * @property {string} logo.ipfs_hash
+ * @property {string} logo.src
+ * @property {string} logo.width
+ * @property {string} name
+ * @property {object} social
+ * @property {string} social.blog
+ * @property {string} social.chat
+ * @property {string} social.facebook
+ * @property {string} social.forum
+ * @property {string} social.github
+ * @property {string} social.gitter
+ * @property {string} social.instagram
+ * @property {string} social.linkedin
+ * @property {string} social.reddit
+ * @property {string} social.slack
+ * @property {string} social.telegram
+ * @property {string} social.twitter
+ * @property {string} social.youtube
+ * @property {object} support
+ * @property {string} support.email
+ * @property {string} support.url
+ * @property {string} symbol
+ * @property {string} type
+ * @property {string} website
  */
 
-/** @type {{[key:string]: TokenInfo}} */
-const data = require('./tokens.json');
+/** @type {Array<TokenInfo>} */
+import { find } from './tokens.json';
 
 /**
  * Get the token info.
@@ -19,7 +43,14 @@ const data = require('./tokens.json');
  * @returns {TokenInfo | undefined} The TokenInfo, undefined if not exists
  */
 function getTokenInfo(symbol) {
-  return data[symbol];
+  return find(x => x.name == symbol);
 }
 
-module.exports = { getTokenInfo };
+/**
+ * @param {string} contactAdress
+ */
+function getTokenInfoByContractAddress(contactAdress) {
+  return find(x => x.address === contactAdress);
+}
+
+export default { getTokenInfo };
